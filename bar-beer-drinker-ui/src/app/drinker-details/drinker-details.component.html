@@ -1,0 +1,35 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Information on {{drinker}}</h1>
+      <p class="lead">Click on an ID to see receipt items</p>
+    </div>
+  </div>
+<div class="container">
+  <p-table [value] = "receipt">
+    <ng-template pTemplate = "header">
+      <tr>
+          <th>ID</th>
+          <th>bar</th>
+          <th>day</th>
+          <th>time</th>
+          <th>subtotal</th>
+          <th>tip</th>
+      </tr>
+    </ng-template>  
+    <ng-template pTemplate = "body" let-receipt>
+      <tr>
+        <td>
+          <a routerLink = "bars/{{receipt.bar}}/{{receipt.ID}}">
+            {{receipt.ID}}
+          </a>
+          </td>
+        <td>{{receipt.bar}}</td>
+        <td>{{receipt.day}}</td>
+        <td>{{receipt.time}}</td>
+        <td>{{receipt.subtotal | currency}}</td>
+        <td>{{receipt.tip |currency }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+    <br><br>

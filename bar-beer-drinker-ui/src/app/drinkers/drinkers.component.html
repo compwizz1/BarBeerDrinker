@@ -1,0 +1,27 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Drinkers</h1>
+      <p class="lead">Click on a drinker to see their poor lifestyle habits!</p>
+    </div>
+  </div>
+  <div class="container">
+    <p-table [value] = "drinkers">
+      <ng-template pTemplate = "header">
+        <tr>
+            <th>Name</th>
+            <th>State</th>
+        </tr>
+      </ng-template>  
+      <ng-template pTemplate = "body" let-drinker>
+        <tr>
+          <td>
+          <a href = "bars/drinkers/{{drinker.name}}">
+            {{drinker.name}}
+          </a>
+            </td>
+          <td>{{drinker.state}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+  <br><br>
